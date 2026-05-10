@@ -1,0 +1,43 @@
+{
+  "name": "best-sellerteck",
+  "version": "1.0.0",
+  "description": "Premium e-commerce backend foundation for Haiti built with Node.js, Express and MySQL.",
+  "main": "backend/src/server.js",
+  "scripts": {
+    "dev": "nodemon backend/src/server.js",
+    "start": "node backend/src/server.js",
+    "lint": "eslint .",
+    "db:schema": "node backend/src/database/runSchema.js",
+    "db:seed": "node backend/src/database/runSeed.js"
+  },
+  "keywords": [
+    "ecommerce",
+    "haiti",
+    "nodejs",
+    "express",
+    "mysql"
+  ],
+  "author": "Codex",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.5",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.2",
+    "mysql2": "^3.14.1",
+    "nodemailer": "^6.10.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.26.0",
+    "nodemon": "^3.1.10"
+  }
+}
