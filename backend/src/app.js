@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
@@ -12,6 +13,12 @@ const notFound = require('./middlewares/notFound');
 const errorHandler = require('./middlewares/errorHandler');
 
 const app = express();
+const frontendDirectory = path.resolve(process.cwd(), 'frontend');
+
+const allowedOriginPatterns = [
+  /^http:\/\/localhost(?::\d+)?$/i,
+  /^http:\/\/127\.0\.0\.1(?::\d+)?$/i
+];
 
 const globalLimiter = rateLimit({
   windowMs: env.rateLimitWindowMs,
@@ -23,7 +30,22 @@ const globalLimiter = rateLimit({
 
 app.disable('x-powered-by');
 app.use(helmet());
-app.use(cors({ origin: env.clientUrl, credentials: true }));
+app.use(
+  cors({
+    origin(origin, callback) {
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      if (origin === env.clientUrl || allowedOriginPatterns.some((pattern) => pattern.test(origin))) {
+        return callback(null, true);
+      }
+
+      return callback(new Error(`CORS blocked for origin: ${origin}`));
+    },
+    credentials: true
+  })
+);
 app.use(compression());
 app.use(hpp());
 app.use(globalLimiter);
@@ -32,9 +54,14 @@ app.use(express.urlencoded({ extended: true, limit: '1mb' }));
 app.use(cookieParser());
 app.use(morgan(env.env === 'development' ? 'dev' : 'combined'));
 app.use('/uploads', express.static('uploads'));
+app.use(express.static(frontendDirectory));
 
 app.get('/health', (req, res) => {
   res.json({ success: true, message: `${env.appName} API is healthy` });
+});
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(frontendDirectory, 'index.html'));
 });
 
 app.use('/api/v1', routes);

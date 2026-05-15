@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrandName | Votre espace client et vos commandes</title>
+    <meta
+      name="description"
+      content="Consultez votre profil client et l'historique de vos commandes."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <div class="announcement-copy">
+        <div class="announcement-signal" aria-hidden="true">
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-user"></use></svg></span>
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-orders"></use></svg></span>
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-chart"></use></svg></span>
+        </div>
+        <p>Retrouvez vos informations, consultez vos commandes et suivez plus facilement votre parcours d'achat.</p>
+      </div>
+      <button id="themeToggle" class="ghost-button" type="button">
+        <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-moon"></use></svg>
+        <span>Theme nuit</span>
+      </button>
+    </div>
+
+    <nav class="navbar page-shell">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark">BN</span>
+        <span class="brand-copy">
+          <strong>BrandName</strong>
+          <small>Template espace client premium</small>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="./shop.html">Boutique</a>
+        <a href="./account.html" aria-current="page">Mon compte</a>
+      </div>
+      <div class="nav-actions">
+        <a id="adminLink" class="ghost-button nav-pill hidden" href="./admin.html">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-shield"></use></svg>
+          <span>Admin</span>
+        </a>
+        <a id="accountLink" class="ghost-button nav-pill" href="./account.html">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-user"></use></svg>
+          <span>Mon compte</span>
+        </a>
+        <button id="logoutButton" class="icon-button nav-pill" type="button">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-close"></use></svg>
+          <span>Deconnexion</span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="page-shell">
+      <section class="page-hero compact">
+        <div>
+          <span class="eyebrow">Espace client</span>
+          <h1>Retrouvez vos informations et vos commandes dans un espace simple a consulter.</h1>
+          <p>
+            Verifiez vos coordonnees, consultez vos commandes recentes et accedez plus facilement au suivi de votre achat.
+          </p>
+        </div>
+        <div class="page-hero-panel">
+          <strong>Suivi plus clair</strong>
+          <p>Retrouvez rapidement ce que vous avez commande et ou en est votre achat.</p>
+        </div>
+      </section>
+
+      <section id="accountGate" class="status-banner hidden"></section>
+
+      <section class="account-layout section">
+        <div class="auth-card">
+          <div class="section-heading">
+          <span class="eyebrow">Profil</span>
+          <h2>Vos informations principales</h2>
+          </div>
+          <div id="profileCard" class="profile-grid"></div>
+        </div>
+
+        <div class="auth-card">
+          <div class="section-heading">
+          <span class="eyebrow">Commandes</span>
+          <h2>Vos commandes recentes</h2>
+          </div>
+          <div id="ordersList" class="orders-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./account.js" type="module"></script>
+  </body>
+</html>

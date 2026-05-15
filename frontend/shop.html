@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrandName | Catalogue electronique et meilleures offres</title>
+    <meta
+      name="description"
+      content="Parcourez les produits, comparez les options et trouvez plus facilement le smartphone, laptop ou accessoire qui correspond a votre besoin."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <div class="announcement-copy">
+        <div class="announcement-signal" aria-hidden="true">
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-search"></use></svg></span>
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-chart"></use></svg></span>
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-box"></use></svg></span>
+        </div>
+        <p>Parcourez le catalogue, comparez les produits et trouvez rapidement ce qui vous convient.</p>
+      </div>
+      <button id="themeToggle" class="ghost-button" type="button">
+        <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-moon"></use></svg>
+        <span>Theme nuit</span>
+      </button>
+    </div>
+
+    <nav class="navbar page-shell">
+      <a class="brand" href="./index.html" aria-label="Retour a l accueil">
+        <span class="brand-mark">BN</span>
+        <span class="brand-copy">
+          <strong>BrandName</strong>
+          <small>Produits tech, meilleures offres et achat plus simple</small>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="./index.html">Accueil</a>
+        <a href="./shop.html" aria-current="page">Boutique</a>
+      </div>
+
+      <div class="nav-actions">
+        <a id="adminLink" class="ghost-button nav-pill hidden" href="./admin.html">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-shield"></use></svg>
+          <span>Admin</span>
+        </a>
+        <a id="accountLink" class="ghost-button nav-pill" href="./account.html">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-user"></use></svg>
+          <span>Mon compte</span>
+        </a>
+        <button id="openCartButton" class="icon-button cart-trigger" type="button">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-cart"></use></svg>
+          <strong id="cartCount">0</strong>
+        </button>
+      </div>
+    </nav>
+
+    <main class="page-shell">
+      <section class="page-hero compact">
+        <div>
+          <span class="eyebrow">Catalogue</span>
+          <h1>Comparez les produits plus facilement et trouvez celui qui correspond vraiment a votre besoin.</h1>
+          <p>
+            Filtrez par categorie, marque et prix pour aller directement a l'essentiel, verifier les options disponibles et gagner du temps avant votre commande.
+          </p>
+          <div class="trust-strip">
+            <span><svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-search"></use></svg> Recherche rapide</span>
+            <span><svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-chart"></use></svg> Comparaison plus simple</span>
+            <span><svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-box"></use></svg> Informations claires</span>
+          </div>
+        </div>
+        <div class="page-hero-panel">
+          <strong id="catalogCount">0 produit</strong>
+          <p>Consultez les produits disponibles et affinez votre recherche selon votre budget, vos habitudes et vos priorites.</p>
+        </div>
+      </section>
+
+      <section class="catalog-layout section">
+        <aside class="filter-sidebar">
+          <div class="filter-block">
+            <span class="eyebrow">Recherche</span>
+            <label class="search-field">
+              <span class="sr-only">Recherche catalogue</span>
+              <svg class="ui-icon search-icon" aria-hidden="true"><use href="./icons.svg#icon-search"></use></svg>
+              <input id="searchInput" type="search" placeholder="Rechercher marque ou produit..." />
+            </label>
+          </div>
+
+          <div class="filter-block">
+            <span class="eyebrow">Rayons</span>
+            <div id="categoryFilters" class="filter-stack"></div>
+          </div>
+
+          <div class="filter-block">
+            <span class="eyebrow">Marques</span>
+            <div id="brandFilters" class="filter-stack"></div>
+          </div>
+
+          <div class="filter-block">
+            <span class="eyebrow">Budget</span>
+            <input id="priceRange" class="range-input" type="range" min="0" max="200000" step="5000" value="200000" />
+            <div class="range-meta">
+              <span>Jusqu a</span>
+              <strong id="priceValue">HTG 200000</strong>
+            </div>
+          </div>
+        </aside>
+
+        <div class="catalog-main">
+          <div class="catalog-toolbar">
+            <div class="toolbar-group">
+              <button id="resetFiltersButton" class="ghost-button" type="button">Reinitialiser</button>
+            </div>
+            <div class="toolbar-group">
+              <label class="select-field">
+                <span>Trier</span>
+                <select id="sortSelect">
+                  <option value="latest">Nouveautes</option>
+                  <option value="price_asc">Prix croissant</option>
+                  <option value="price_desc">Prix decroissant</option>
+                  <option value="rating_desc">Meilleures notes</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div id="statusMessage" class="status-message">Chargement du catalogue...</div>
+          <div id="productGrid" class="product-grid" aria-live="polite"></div>
+
+          <div class="pagination-bar">
+            <button id="prevPageButton" class="ghost-button" type="button">Precedent</button>
+            <strong id="pageIndicator">Page 1</strong>
+            <button id="nextPageButton" class="ghost-button" type="button">Suivant</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+      <div class="cart-drawer-header">
+        <h2>Votre panier</h2>
+        <button id="closeCartButton" class="ghost-button icon-only-button" type="button" aria-label="Fermer">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-close"></use></svg>
+        </button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-summary">
+        <div>
+          <span>Total</span>
+          <strong id="cartTotal">HTG 0</strong>
+        </div>
+        <a id="checkoutLink" class="primary-button full-width" href="./checkout.html">Passer au paiement</a>
+      </div>
+    </aside>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./shop.js" type="module"></script>
+  </body>
+</html>

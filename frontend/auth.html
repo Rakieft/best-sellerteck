@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrandName | Connexion et creation de compte</title>
+    <meta
+      name="description"
+      content="Connectez-vous ou creez votre compte pour synchroniser votre panier et commander."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <div class="announcement-copy">
+        <div class="announcement-signal" aria-hidden="true">
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-user"></use></svg></span>
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-cart"></use></svg></span>
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-orders"></use></svg></span>
+        </div>
+        <p>Connectez-vous pour retrouver votre panier et finaliser votre commande plus facilement.</p>
+      </div>
+      <button id="themeToggle" class="ghost-button" type="button">
+        <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-moon"></use></svg>
+        <span>Theme nuit</span>
+      </button>
+    </div>
+
+    <nav class="navbar page-shell">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark">BN</span>
+        <span class="brand-copy">
+          <strong>BrandName</strong>
+          <small>Template compte client premium</small>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="./index.html">Accueil</a>
+        <a href="./shop.html">Boutique</a>
+      </div>
+
+      <div class="nav-actions">
+        <a id="adminLink" class="ghost-button nav-pill hidden" href="./admin.html">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-shield"></use></svg>
+          <span>Admin</span>
+        </a>
+        <a id="accountLink" class="ghost-button nav-pill" href="./account.html">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-user"></use></svg>
+          <span>Mon compte</span>
+        </a>
+      </div>
+    </nav>
+
+    <main class="page-shell">
+      <section class="auth-layout section">
+        <div class="auth-panel">
+          <span class="eyebrow">Compte client</span>
+          <h1>Accedez a votre compte pour commander plus facilement.</h1>
+          <p>
+            En vous connectant, vous pouvez retrouver votre panier, suivre vos commandes et gagner du temps lors du paiement.
+          </p>
+          <ul class="hero-metrics">
+            <li>
+              <strong>Panier</strong>
+              <span>Retrouvez les produits que vous avez ajoutes avant de passer commande.</span>
+            </li>
+            <li>
+              <strong>Suivi</strong>
+              <span>Consultez vos commandes et gardez une meilleure visibilite apres votre achat.</span>
+            </li>
+            <li>
+              <strong>Gain de temps</strong>
+              <span>Vos informations sont reprises plus facilement au moment du paiement.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="auth-forms">
+          <div class="auth-card">
+            <div class="section-heading">
+              <span class="eyebrow">Connexion</span>
+              <h2>Retrouver votre panier</h2>
+            </div>
+            <form id="loginForm" class="form-grid">
+              <label>
+                <span>Email</span>
+                <input name="email" type="email" required />
+              </label>
+              <label>
+                <span>Mot de passe</span>
+                <input name="password" type="password" required />
+              </label>
+              <button class="primary-button" type="submit">Se connecter</button>
+            </form>
+          </div>
+
+          <div class="auth-card">
+            <div class="section-heading">
+              <span class="eyebrow">Inscription</span>
+              <h2>Creer votre compte</h2>
+            </div>
+            <form id="registerForm" class="form-grid">
+              <label>
+                <span>Prenom</span>
+                <input name="first_name" type="text" required />
+              </label>
+              <label>
+                <span>Nom</span>
+                <input name="last_name" type="text" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input name="email" type="email" required />
+              </label>
+              <label>
+                <span>Telephone</span>
+                <input name="phone" type="tel" required />
+              </label>
+              <label>
+                <span>Mot de passe</span>
+                <input name="password" type="password" required />
+              </label>
+              <button class="secondary-button" type="submit">Creer mon compte</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./auth.js" type="module"></script>
+  </body>
+</html>

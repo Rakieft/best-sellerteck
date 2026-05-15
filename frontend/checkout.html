@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrandName | Finalisez votre commande en toute confiance</title>
+    <meta
+      name="description"
+      content="Verifiez votre panier, choisissez votre mode de paiement et confirmez votre commande en toute confiance."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <div class="announcement-copy">
+        <div class="announcement-signal" aria-hidden="true">
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-cart"></use></svg></span>
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-shield"></use></svg></span>
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-box"></use></svg></span>
+        </div>
+        <p>Verifiez votre commande, confirmez vos informations et choisissez un mode de paiement avec plus de clarte.</p>
+      </div>
+      <button id="themeToggle" class="ghost-button" type="button">
+        <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-moon"></use></svg>
+        <span>Theme nuit</span>
+      </button>
+    </div>
+
+    <nav class="navbar page-shell">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark">BN</span>
+        <span class="brand-copy">
+          <strong>BrandName</strong>
+          <small>Template paiement premium et modulable</small>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="./shop.html">Boutique</a>
+        <a href="./checkout.html" aria-current="page">Paiement</a>
+      </div>
+      <div class="nav-actions">
+        <a id="adminLink" class="ghost-button nav-pill hidden" href="./admin.html">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-shield"></use></svg>
+          <span>Admin</span>
+        </a>
+        <a id="accountLink" class="ghost-button nav-pill" href="./account.html">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-user"></use></svg>
+          <span>Mon compte</span>
+        </a>
+      </div>
+    </nav>
+
+    <main class="page-shell">
+      <section class="page-hero compact">
+        <div>
+          <span class="eyebrow">Avant de confirmer</span>
+          <h1>Finalisez votre commande avec des informations utiles et faciles a verifier.</h1>
+          <p>
+            Verifiez votre panier, confirmez vos coordonnees de livraison et choisissez le mode de paiement qui vous convient le mieux.
+          </p>
+        </div>
+        <div class="page-hero-panel">
+          <strong id="checkoutCartCount">0 article</strong>
+          <p>Consultez le total de votre commande avant de la confirmer.</p>
+        </div>
+      </section>
+
+      <section id="checkoutGate" class="status-banner hidden"></section>
+
+      <section class="checkout-layout section">
+        <form id="checkoutForm" class="checkout-form">
+          <div class="auth-card">
+            <div class="section-heading">
+              <span class="eyebrow">Livraison</span>
+              <h2>Confirmez vos informations de livraison</h2>
+            </div>
+            <div class="form-grid two-columns">
+              <label>
+                <span>Nom complet</span>
+                <input name="delivery_name" type="text" required />
+              </label>
+              <label>
+                <span>Telephone</span>
+                <input name="delivery_phone" type="tel" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input name="delivery_email" type="email" required />
+              </label>
+              <label>
+                <span>Ville</span>
+                <input name="delivery_city" type="text" required />
+              </label>
+              <label class="full-span">
+                <span>Adresse de livraison</span>
+                <input name="delivery_address" type="text" required />
+              </label>
+              <label class="full-span">
+                <span>Instructions utiles pour la livraison</span>
+                <textarea name="delivery_notes" rows="4"></textarea>
+              </label>
+            </div>
+          </div>
+
+          <div class="auth-card">
+            <div class="section-heading">
+              <span class="eyebrow">Paiement</span>
+              <h2>Choisissez le mode de paiement qui vous convient</h2>
+            </div>
+            <div id="paymentOptions" class="payment-options"></div>
+            <button class="primary-button" type="submit">Confirmer ma commande</button>
+          </div>
+        </form>
+
+        <aside class="checkout-summary auth-card">
+          <div class="section-heading">
+              <span class="eyebrow">Recapitulatif</span>
+              <h2>Verifiez votre commande avant validation</h2>
+          </div>
+          <div id="checkoutItems" class="cart-items"></div>
+          <div class="summary-totals">
+            <div class="cart-item-row"><span>Sous-total</span><strong id="subtotalValue">HTG 0</strong></div>
+            <div class="cart-item-row"><span>Livraison</span><strong id="shippingValue">HTG 0</strong></div>
+            <div class="cart-item-row"><span>Total</span><strong id="grandTotalValue">HTG 0</strong></div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./checkout.js" type="module"></script>
+  </body>
+</html>

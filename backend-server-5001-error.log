@@ -1,0 +1,89 @@
+ApiError: Route not found: /favicon.ico
+    at module.exports (C:\Users\kieft\Desktop\electronic\best-sellerteck\backend\src\middlewares\notFound.js:4:8)
+    at Layer.handle [as handle_request] (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:280:10)
+    at SendStream.error (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\serve-static\index.js:121:7)
+    at SendStream.emit (node:events:508:28)
+    at SendStream.error (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\send\index.js:270:17)
+    at SendStream.onStatError (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\send\index.js:417:12) {
+  statusCode: 404,
+  details: null
+}
+ApiError: Invalid credentials
+    at C:\Users\kieft\Desktop\electronic\best-sellerteck\backend\src\controllers\authController.js:43:11 {
+  statusCode: 401,
+  details: null
+}
+ApiError: Authentication required
+    at protect (C:\Users\kieft\Desktop\electronic\best-sellerteck\backend\src\middlewares\auth.js:11:19)
+    at Layer.handle [as handle_request] (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:328:13) {
+  statusCode: 401,
+  details: null
+}
+ApiError: Authentication required
+    at protect (C:\Users\kieft\Desktop\electronic\best-sellerteck\backend\src\middlewares\auth.js:11:19)
+    at Layer.handle [as handle_request] (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:328:13) {
+  statusCode: 401,
+  details: null
+}
+ApiError: Authentication required
+    at protect (C:\Users\kieft\Desktop\electronic\best-sellerteck\backend\src\middlewares\auth.js:11:19)
+    at Layer.handle [as handle_request] (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:284:15
+    at router.process_params (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:280:10)
+    at router.handle (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:47:12) {
+  statusCode: 401,
+  details: null
+}
+ApiError: Route not found: /api/v1/products/
+    at module.exports (C:\Users\kieft\Desktop\electronic\best-sellerteck\backend\src\middlewares\notFound.js:4:8)
+    at Layer.handle [as handle_request] (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:646:15
+    at next (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:265:14)
+    at C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:646:15
+    at next (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:265:14) {
+  statusCode: 404,
+  details: null
+}
+ApiError: Route not found: /api/v1/products/
+    at module.exports (C:\Users\kieft\Desktop\electronic\best-sellerteck\backend\src\middlewares\notFound.js:4:8)
+    at Layer.handle [as handle_request] (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:646:15
+    at next (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:265:14)
+    at C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:646:15
+    at next (C:\Users\kieft\Desktop\electronic\best-sellerteck\node_modules\express\lib\router\index.js:265:14) {
+  statusCode: 404,
+  details: null
+}

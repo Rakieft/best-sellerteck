@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrandName | Boutique electronique premium</title>
+    <meta
+      name="description"
+      content="Achetez smartphones, laptops, televisions et accessoires avec une presentation claire, un paiement rassurant et une experience premium."
+    />
+    <meta
+      name="keywords"
+      content="e-commerce Haiti, electronique Haiti, smartphones, laptops, televisions, gadgets tech"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <div class="announcement-copy">
+        <div class="announcement-signal" aria-hidden="true">
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-shield"></use></svg></span>
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-box"></use></svg></span>
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-spark"></use></svg></span>
+        </div>
+        <p>Commandez plus sereinement avec des informations claires, un paiement securise et une livraison mieux preparee.</p>
+      </div>
+      <button id="themeToggle" class="ghost-button" type="button" aria-label="Changer le theme">
+        <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-moon"></use></svg>
+        <span>Theme nuit</span>
+      </button>
+    </div>
+
+    <header class="site-header" id="top">
+      <nav class="navbar">
+        <a class="brand" href="#top" aria-label="BrandName accueil">
+          <span class="brand-mark">BN</span>
+          <span class="brand-copy">
+            <strong>BrandName</strong>
+            <small>Electronique, accessoires et maison connectee</small>
+          </span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#collections">Collections</a>
+          <a href="./shop.html">Boutique</a>
+          <a href="#advantages">Pourquoi nous</a>
+          <a href="#catalog">Produits</a>
+          <a href="#testimonials">Avis</a>
+        </div>
+
+        <div class="nav-actions">
+          <a id="adminLink" class="ghost-button nav-pill hidden" href="./admin.html">
+            <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-shield"></use></svg>
+            <span>Admin</span>
+          </a>
+          <a id="accountLink" class="ghost-button nav-pill" href="./account.html">
+            <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-user"></use></svg>
+            <span>Mon compte</span>
+          </a>
+          <button id="openCartButton" class="icon-button cart-trigger" type="button" aria-label="Ouvrir le panier">
+            <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-cart"></use></svg>
+            <strong id="cartCount">0</strong>
+          </button>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">Offres du moment</span>
+          <h1>Des appareils fiables, bien presentes et plus faciles a acheter en ligne.</h1>
+          <p>
+            Retrouvez smartphones, laptops, televiseurs, consoles et accessoires avec des prix visibles,
+            des informations utiles et un parcours d'achat plus simple du premier clic jusqu'au paiement.
+          </p>
+
+          <div class="hero-actions">
+            <a class="primary-button" href="./shop.html">
+              <span>Decouvrir les produits</span>
+              <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-arrow-right"></use></svg>
+            </a>
+            <a class="secondary-button" href="#collections">
+              <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-spark"></use></svg>
+              <span>Voir les rayons</span>
+            </a>
+          </div>
+
+          <div class="trust-strip" aria-label="Promesses de service">
+            <span><svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-shield"></use></svg> Paiement securise</span>
+            <span><svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-box"></use></svg> Livraison suivie</span>
+            <span><svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-spark"></use></svg> Assistance utile</span>
+          </div>
+
+          <ul class="hero-metrics" aria-label="Statistiques de confiance">
+            <li>
+              <strong>48h</strong>
+              <span>Livraison acceleree selon votre zone</span>
+            </li>
+            <li>
+              <strong>100%</strong>
+              <span>Paiement prepare pour des options simples et connues</span>
+            </li>
+            <li>
+              <strong>Premium</strong>
+              <span>Presentation claire, visuelle et pensee pour inspirer confiance</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <div class="device-card">
+            <p class="device-card-label">Selection vedette</p>
+            <h2>Des nouveautes, des meilleures ventes et des offres utiles reunies sur une seule page.</h2>
+            <p>
+              Comparez plus facilement les modeles populaires, reperez les bonnes affaires et
+              accedez rapidement aux rayons qui vous interessent.
+            </p>
+            <div class="device-grid">
+              <span>Smartphones</span>
+              <span>Laptops</span>
+              <span>TV & Audio</span>
+              <span>Gaming</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="signal-bar section" id="showcase">
+        <article class="signal-card">
+          <span class="summary-label">Livraison</span>
+          <strong>Suivi plus clair</strong>
+          <p>Recevez vos produits avec un meilleur suivi de commande et des informations plus faciles a verifier.</p>
+        </article>
+        <article class="signal-card">
+          <span class="summary-label">Paiement</span>
+          <strong>Commande rassurante</strong>
+          <p>Consultez le total, les options de paiement et les informations de livraison avant de confirmer.</p>
+        </article>
+        <article class="signal-card">
+          <span class="summary-label">Service</span>
+          <strong>Aide utile</strong>
+          <p>Retrouvez les details essentiels sur chaque produit pour choisir plus vite et avec plus d'assurance.</p>
+        </article>
+      </section>
+
+      <section class="editorial-showcase section">
+        <div class="section-heading">
+          <span class="eyebrow">Acheter plus facilement</span>
+          <h2>Une page d'accueil pensee pour orienter rapidement vers les produits, les offres et les rayons principaux.</h2>
+          <p>
+            Des blocs visuels forts, des messages plus simples a lire et une navigation plus directe
+            pour aider le client a comprendre l'offre en quelques secondes.
+          </p>
+        </div>
+
+        <div class="showcase-grid">
+          <article class="showcase-card showcase-card-large">
+            <span class="eyebrow">En ce moment</span>
+            <h3>Retrouvez les appareils les plus recherches dans une presentation qui donne envie d'explorer.</h3>
+            <p>Promotions visibles, mise en avant des nouveautes et lecture plus fluide pour les clients qui veulent aller vite.</p>
+          </article>
+          <article class="showcase-card">
+            <span class="eyebrow">Promotions</span>
+            <h3>Offres limitees et produits en vedette.</h3>
+            <p>Un espace ideal pour les meilleures ventes, les campagnes saisonnieres et les reductions du moment.</p>
+          </article>
+          <article class="showcase-card">
+            <span class="eyebrow">Confiance</span>
+            <h3>Des informations qui rassurent sans ralentir l'achat.</h3>
+            <p>Livraison, paiement, disponibilite et support restent visibles la ou le client en a vraiment besoin.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="collections section" id="collections">
+        <div class="section-heading">
+          <span class="eyebrow">Rayons principaux</span>
+          <h2>Des categories visibles des le debut pour guider le client vers ce qu'il cherche vraiment.</h2>
+          <p>
+            Telephones, informatique, image, son, gaming et accessoires: les rayons les plus utiles restent accessibles en un coup d'oeil.
+          </p>
+        </div>
+
+        <div id="categoryGrid" class="category-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="advantages section" id="advantages">
+        <div class="section-heading">
+          <span class="eyebrow">Pourquoi acheter ici</span>
+          <h2>Tout est organise pour aider le client a comparer, comprendre et commander avec plus de confiance.</h2>
+        </div>
+
+        <div class="advantage-grid">
+          <article class="advantage-card">
+            <div class="feature-icon"><svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-spark"></use></svg></div>
+            <h3>Navigation plus simple</h3>
+            <p>Le visiteur trouve plus vite le bon rayon, le bon produit et les informations les plus utiles.</p>
+          </article>
+          <article class="advantage-card">
+            <div class="feature-icon"><svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-search"></use></svg></div>
+            <h3>Comparaison plus claire</h3>
+            <p>Prix, avis, disponibilite et caracteristiques importantes sont plus faciles a lire avant l'ajout au panier.</p>
+          </article>
+          <article class="advantage-card">
+            <div class="feature-icon"><svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-chart"></use></svg></div>
+            <h3>Commande plus rassurante</h3>
+            <p>Le parcours d'achat donne une meilleure visibilite sur le total, la livraison et la confirmation finale.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="catalog section" id="catalog">
+        <div class="catalog-topbar">
+          <div class="section-heading">
+            <span class="eyebrow">Selection produits</span>
+            <h2>Les produits que les clients regardent le plus en ce moment.</h2>
+          </div>
+
+          <div class="catalog-controls">
+            <label class="search-field">
+              <span class="sr-only">Rechercher un produit</span>
+              <svg class="ui-icon search-icon" aria-hidden="true"><use href="./icons.svg#icon-search"></use></svg>
+              <input
+                id="searchInput"
+                type="search"
+                placeholder="Rechercher smartphone, laptop, TV..."
+                autocomplete="off"
+              />
+            </label>
+          </div>
+        </div>
+
+        <div id="categoryFilters" class="filter-row" aria-label="Filtrer par categorie"></div>
+        <div id="statusMessage" class="status-message" role="status">Chargement des produits...</div>
+        <div id="productGrid" class="product-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="story-panel section">
+        <div class="story-card">
+          <div>
+          <span class="eyebrow">Une experience plus fluide</span>
+          <h2>Chaque section aide le client a avancer plus vite vers le bon produit.</h2>
+          </div>
+          <p>
+            L'accueil presente les rayons, les produits du moment et les elements de confiance sans surcharger la lecture ni casser le rythme.
+          </p>
+        </div>
+      </section>
+
+      <section class="editorial-band section">
+        <div class="editorial-card">
+          <span class="eyebrow">Avant de commander</span>
+          <h2>Le client doit pouvoir verifier l'essentiel sans quitter la page ni se sentir perdu.</h2>
+          <p>
+            Prix, rayons, popularite, avis et promesses de service sont mieux articules pour rendre la boutique plus credible et plus utile.
+          </p>
+        </div>
+      </section>
+
+      <section class="testimonials section" id="testimonials">
+        <div class="section-heading">
+          <span class="eyebrow">Avis clients</span>
+          <h2>Des retours qui aident a installer un climat de confiance des les premiers scrolls.</h2>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <p>
+              "J'ai trouve rapidement ce que je cherchais et j'ai pu comparer sans perdre du temps."
+            </p>
+            <strong>Ruth, Port-au-Prince</strong>
+          </article>
+          <article class="testimonial-card">
+            <p>
+              "Les produits sont bien presentes et le parcours donne plus confiance avant de payer."
+            </p>
+            <strong>David, Cap-Haitien</strong>
+          </article>
+          <article class="testimonial-card">
+            <p>
+              "J'aime le fait de voir clairement les rayons, les avis et les informations importantes."
+            </p>
+            <strong>Nadia, Petion-Ville</strong>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+      <div class="cart-drawer-header">
+        <h2>Votre panier</h2>
+        <button id="closeCartButton" class="ghost-button icon-only-button" type="button" aria-label="Fermer">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-close"></use></svg>
+        </button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-summary">
+        <div>
+          <span>Total</span>
+          <strong id="cartTotal">HTG 0</strong>
+        </div>
+        <a id="checkoutLink" class="primary-button full-width" href="./checkout.html">Passer au paiement</a>
+      </div>
+    </aside>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <footer class="site-footer">
+      <div>
+        <strong>BrandName</strong>
+        <p>Une boutique en ligne pensee pour aider les clients a acheter leurs appareils plus facilement.</p>
+      </div>
+      <div>
+        <strong>Besoin d'aide ?</strong>
+        <p>Retrouvez des informations claires sur les produits, votre panier et le suivi de votre commande.</p>
+      </div>
+      <div>
+        <strong>Commande sereine</strong>
+        <p>Du choix du produit jusqu'au paiement, tout est presente pour vous aider a acheter avec plus de tranquillite.</p>
+      </div>
+    </footer>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

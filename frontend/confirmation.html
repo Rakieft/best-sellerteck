@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrandName | Confirmation de commande</title>
+    <meta
+      name="description"
+      content="Consultez le recapitulatif detaille de votre commande."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <div class="announcement-copy">
+        <div class="announcement-signal" aria-hidden="true">
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-orders"></use></svg></span>
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-box"></use></svg></span>
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-shield"></use></svg></span>
+        </div>
+        <p>Votre commande a bien ete prise en compte. Verifiez le recapitulatif ci-dessous.</p>
+      </div>
+      <button id="themeToggle" class="ghost-button" type="button">
+        <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-moon"></use></svg>
+        <span>Theme nuit</span>
+      </button>
+    </div>
+
+    <nav class="navbar page-shell">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark">BN</span>
+        <span class="brand-copy">
+          <strong>BrandName</strong>
+          <small>Template confirmation de commande</small>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="./shop.html">Boutique</a>
+        <a href="./account.html">Mon compte</a>
+      </div>
+      <div class="nav-actions">
+        <a id="adminLink" class="ghost-button nav-pill hidden" href="./admin.html">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-shield"></use></svg>
+          <span>Admin</span>
+        </a>
+        <a id="accountLink" class="ghost-button nav-pill" href="./account.html">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-user"></use></svg>
+          <span>Mon compte</span>
+        </a>
+      </div>
+    </nav>
+
+    <main class="page-shell">
+      <section id="confirmationGate" class="status-banner hidden"></section>
+
+      <section class="page-hero compact">
+        <div>
+          <span class="eyebrow">Commande enregistree</span>
+          <h1>Votre commande a bien ete enregistree.</h1>
+          <p>
+            Retrouvez ici le numero de commande, les articles choisis et les informations de livraison pour garder une vue claire sur votre achat.
+          </p>
+        </div>
+        <div id="confirmationHero" class="page-hero-panel"></div>
+      </section>
+
+      <section class="checkout-layout section">
+        <div class="auth-card">
+          <div class="section-heading">
+            <span class="eyebrow">Resume</span>
+            <h2>Articles de votre commande</h2>
+          </div>
+          <div id="confirmationItems" class="cart-items"></div>
+        </div>
+
+        <div class="auth-card">
+          <div class="section-heading">
+            <span class="eyebrow">Livraison</span>
+            <h2>Informations de livraison</h2>
+          </div>
+          <div id="confirmationDelivery" class="profile-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./confirmation.js" type="module"></script>
+  </body>
+</html>

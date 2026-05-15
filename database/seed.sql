@@ -7,7 +7,7 @@ INSERT INTO categories (name, slug, description) VALUES
 ON DUPLICATE KEY UPDATE description = VALUES(description);
 
 INSERT INTO users (first_name, last_name, email, phone, password_hash, role)
-VALUES ('Admin', 'BestSellerTeck', 'admin@best-sellerteck.ht', '+50900000000', '$2a$12$7JQxWQhMavx0ymNEzbG8UuQJqzT7l5YihlaA65Tdm42Hcps225y7O', 'admin')
+VALUES ('Admin', 'BestSellerTeck', 'admin@best-sellerteck.ht', '+50900000000', '$2a$12$/8k.jPyiai6Z55xO0H0Qf.Duxdwq3DqFttaj1BcenT9Ji/wHqqlDe', 'admin')
 ON DUPLICATE KEY UPDATE role = VALUES(role);
 
 INSERT INTO admins (user_id, access_level)

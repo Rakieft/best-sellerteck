@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrandName | Fiche produit detaillee et achat en confiance</title>
+    <meta
+      name="description"
+      content="Consultez les informations essentielles du produit, verifiez sa disponibilite et ajoutez-le facilement a votre panier."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <div class="announcement-copy">
+        <div class="announcement-signal" aria-hidden="true">
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-search"></use></svg></span>
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-shield"></use></svg></span>
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-cart"></use></svg></span>
+        </div>
+        <p>Consultez les details essentiels, verifiez la disponibilite et avancez vers votre commande avec plus d'assurance.</p>
+      </div>
+      <button id="themeToggle" class="ghost-button" type="button">
+        <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-moon"></use></svg>
+        <span>Theme nuit</span>
+      </button>
+    </div>
+
+    <nav class="navbar page-shell">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark">BN</span>
+        <span class="brand-copy">
+          <strong>BrandName</strong>
+          <small>Details clairs, prix visibles et achat plus serein</small>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="./index.html">Accueil</a>
+        <a href="./shop.html">Boutique</a>
+      </div>
+      <div class="nav-actions">
+        <a id="adminLink" class="ghost-button nav-pill hidden" href="./admin.html">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-shield"></use></svg>
+          <span>Admin</span>
+        </a>
+        <a id="accountLink" class="ghost-button nav-pill" href="./account.html">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-user"></use></svg>
+          <span>Mon compte</span>
+        </a>
+        <button id="openCartButton" class="icon-button cart-trigger" type="button">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-cart"></use></svg>
+          <strong id="cartCount">0</strong>
+        </button>
+      </div>
+    </nav>
+
+    <main class="page-shell">
+      <section id="productStatus" class="status-banner">Chargement de la fiche produit...</section>
+
+      <section id="productDetail" class="product-showcase hidden">
+        <div class="product-showcase-top">
+          <div class="product-gallery product-gallery-premium">
+            <div class="gallery-main gallery-main-premium">
+              <div class="gallery-placeholder gallery-hero">
+                <div class="gallery-headline">
+                  <span class="eyebrow">Produit en detail</span>
+                  <h2 id="productName">Produit</h2>
+                  <p id="productShortDescription"></p>
+                </div>
+
+                <div class="gallery-floating-card">
+                  <span class="summary-label">Repere utile</span>
+                  <strong id="productBrandHero">Selection recommandee</strong>
+                  <p>Les points les plus utiles restent visibles rapidement pour vous aider a comparer sans hesiter.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-thumbs gallery-thumbs-premium">
+              <div class="thumb-card thumb-card-premium">
+                <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-spark"></use></svg>
+                <span>Vue d'ensemble</span>
+              </div>
+              <div class="thumb-card thumb-card-premium">
+                <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-chart"></use></svg>
+                <span>Infos utiles</span>
+              </div>
+              <div class="thumb-card thumb-card-premium">
+                <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-shield"></use></svg>
+                <span>Achat rassurant</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-summary-panel product-summary-premium">
+            <div class="product-summary-header">
+              <span id="productCategory" class="product-category"></span>
+              <span class="product-tag">Bon choix du moment</span>
+            </div>
+
+            <h1 id="productTitle"></h1>
+            <p id="productDescription" class="product-long-copy"></p>
+
+            <div class="product-trust-row">
+              <span><svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-shield"></use></svg> Paiement securise</span>
+              <span><svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-box"></use></svg> Livraison mieux preparee</span>
+              <span><svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-spark"></use></svg> Informations utiles en un coup d'oeil</span>
+            </div>
+
+            <div class="product-summary-grid premium-grid">
+              <div>
+                <span class="summary-label">Prix</span>
+                <strong id="productPrice" class="product-price large"></strong>
+              </div>
+              <div>
+                <span class="summary-label">Marque</span>
+                <strong id="productBrand"></strong>
+              </div>
+              <div>
+                <span class="summary-label">Stock</span>
+                <strong id="productStock"></strong>
+              </div>
+              <div>
+                <span class="summary-label">Avis</span>
+                <strong id="productReviewsCount"></strong>
+              </div>
+            </div>
+
+            <div class="purchase-panel">
+              <div class="product-purchase-row">
+                <label class="quantity-box">
+                  <span>Quantite</span>
+                  <input id="quantityInput" type="number" min="1" value="1" />
+                </label>
+                <button id="addToCartButton" class="primary-button product-buy-button" type="button">
+                  <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-cart"></use></svg>
+                  <span>Ajouter au panier</span>
+                </button>
+              </div>
+
+              <div class="product-cta-row">
+                <a class="secondary-button" href="./shop.html">
+                  <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-arrow-right"></use></svg>
+                  <span>Retour a la boutique</span>
+                </a>
+                <a class="ghost-button" href="./index.html">
+                  <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-spark"></use></svg>
+                  <span>Accueil</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section premium-section-block">
+        <div class="section-heading">
+          <span class="eyebrow">Pourquoi cette fiche aide vraiment</span>
+          <h2>Tout est presente pour vous permettre de verifier l'essentiel avant d'acheter.</h2>
+        </div>
+        <div class="advantage-grid">
+          <article class="advantage-card">
+            <div class="feature-icon"><svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-search"></use></svg></div>
+            <h3>Informations faciles a lire</h3>
+            <p>Prix, disponibilite, marque et details importants restent visibles sans devoir parcourir une page confuse.</p>
+          </article>
+          <article class="advantage-card">
+            <div class="feature-icon"><svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-box"></use></svg></div>
+            <h3>Decision plus simple</h3>
+            <p>Vous pouvez verifier plus rapidement si ce produit correspond vraiment a votre besoin avant de l'ajouter au panier.</p>
+          </article>
+          <article class="advantage-card">
+            <div class="feature-icon"><svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-chart"></use></svg></div>
+            <h3>Commande mieux preparee</h3>
+            <p>Vous voyez l'essentiel avant le paiement pour commander avec plus de tranquillite et moins d'hesitation.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section premium-section-block">
+        <div class="editorial-card">
+          <span class="eyebrow">Avant d'ajouter au panier</span>
+          <h2>Prenez quelques secondes pour verifier ce qui compte le plus pour vous.</h2>
+          <p>
+            Prix, disponibilite, marque, quantite et avis sont reunis au meme endroit pour vous aider a commander avec plus d'assurance, sans lecture compliquee.
+          </p>
+        </div>
+      </section>
+
+      <section class="section premium-section-block">
+        <div class="section-heading">
+          <span class="eyebrow">Avis clients</span>
+          <h2>Les retours d'autres clients peuvent vous aider a decider plus sereinement.</h2>
+        </div>
+        <div id="reviewsGrid" class="testimonial-grid"></div>
+      </section>
+    </main>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+      <div class="cart-drawer-header">
+        <h2>Votre panier</h2>
+        <button id="closeCartButton" class="ghost-button icon-only-button" type="button" aria-label="Fermer">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-close"></use></svg>
+        </button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-summary">
+        <div>
+          <span>Total</span>
+          <strong id="cartTotal">HTG 0</strong>
+        </div>
+        <a id="checkoutLink" class="primary-button full-width" href="./checkout.html">Passer au paiement</a>
+      </div>
+    </aside>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./product.js" type="module"></script>
+  </body>
+</html>
+

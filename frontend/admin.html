@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrandName | Tableau de bord admin</title>
+    <meta
+      name="description"
+      content="Tableau de bord admin pour gerer produits, commandes et statistiques."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <div class="announcement-copy">
+        <div class="announcement-signal" aria-hidden="true">
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-chart"></use></svg></span>
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-orders"></use></svg></span>
+          <span class="announcement-badge"><svg class="ui-icon"><use href="./icons.svg#icon-shield"></use></svg></span>
+        </div>
+        <p>Centre de pilotage white-label pour gerer l'activite e-commerce avec plus de clarte.</p>
+      </div>
+      <button id="themeToggle" class="ghost-button" type="button">
+        <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-moon"></use></svg>
+        <span>Theme nuit</span>
+      </button>
+    </div>
+
+    <nav class="navbar page-shell">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark">BN</span>
+        <span class="brand-copy">
+          <strong>BrandName</strong>
+          <small>Template admin premium</small>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="./shop.html">Boutique</a>
+        <a href="./account.html">Mon compte</a>
+        <a href="./admin.html" aria-current="page">Admin</a>
+      </div>
+      <div class="nav-actions">
+        <a id="accountLink" class="ghost-button nav-pill" href="./account.html">
+          <svg class="ui-icon" aria-hidden="true"><use href="./icons.svg#icon-user"></use></svg>
+          <span>Mon compte</span>
+        </a>
+      </div>
+    </nav>
+
+    <main class="page-shell">
+      <section id="adminGate" class="status-banner hidden"></section>
+
+      <section class="page-hero compact">
+        <div>
+          <span class="eyebrow">Dashboard</span>
+          <h1>Piloter la boutique avec une interface claire, rapide et credible.</h1>
+          <p>
+            Cette premiere version admin couvre les statistiques essentielles, la gestion produit et
+            le suivi des commandes sans framework lourd.
+          </p>
+        </div>
+        <div class="page-hero-panel">
+          <strong id="adminGreeting">Acces admin</strong>
+          <p>Utilisez le compte admin seed pour gerer le catalogue et les commandes.</p>
+        </div>
+      </section>
+
+      <section class="stats-grid section">
+        <article class="stat-card">
+          <span class="summary-label">Utilisateurs</span>
+          <strong id="totalUsersStat">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="summary-label">Produits</span>
+          <strong id="totalProductsStat">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="summary-label">Commandes</span>
+          <strong id="totalOrdersStat">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="summary-label">Revenus</span>
+          <strong id="revenueStat">HTG 0</strong>
+        </article>
+      </section>
+
+      <section class="admin-layout section">
+        <div class="auth-card">
+          <div class="section-heading">
+            <span class="eyebrow">Produits</span>
+            <h2>Ajouter ou modifier un produit</h2>
+          </div>
+          <form id="productForm" class="form-grid two-columns">
+            <input type="hidden" name="product_id" />
+            <label>
+              <span>Nom</span>
+              <input name="name" type="text" required />
+            </label>
+            <label>
+              <span>Slug</span>
+              <input name="slug" type="text" required />
+            </label>
+            <label>
+              <span>Marque</span>
+              <input name="brand" type="text" required />
+            </label>
+            <label>
+              <span>SKU</span>
+              <input name="sku" type="text" required />
+            </label>
+            <label>
+              <span>Categorie</span>
+              <select name="category_id" id="categorySelect" required></select>
+            </label>
+            <label>
+              <span>Stock</span>
+              <input name="stock_quantity" type="number" min="0" required />
+            </label>
+            <label>
+              <span>Prix</span>
+              <input name="price" type="number" min="0" step="0.01" required />
+            </label>
+            <label>
+              <span>Prix promo</span>
+              <input name="sale_price" type="number" min="0" step="0.01" />
+            </label>
+            <label class="full-span">
+              <span>Short description</span>
+              <input name="short_description" type="text" />
+            </label>
+            <label class="full-span">
+              <span>Description</span>
+              <textarea name="description" rows="4"></textarea>
+            </label>
+            <label>
+              <span>Image URL</span>
+              <input name="image_url" type="url" />
+            </label>
+            <label>
+              <span>Statut</span>
+              <select name="status">
+                <option value="active">active</option>
+                <option value="draft">draft</option>
+                <option value="archived">archived</option>
+              </select>
+            </label>
+            <label class="checkbox-line">
+              <input name="is_featured" type="checkbox" />
+              <span>Mettre en avant</span>
+            </label>
+            <div class="form-actions full-span">
+              <button class="primary-button" type="submit">Enregistrer</button>
+              <button id="resetProductFormButton" class="ghost-button" type="button">Reinitialiser</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="auth-card">
+          <div class="section-heading">
+            <span class="eyebrow">Catalogue</span>
+            <h2>Produits existants</h2>
+          </div>
+          <div id="adminProductsList" class="orders-list"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="auth-card">
+          <div class="section-heading">
+            <span class="eyebrow">Commandes</span>
+            <h2>Suivi et mise a jour des statuts</h2>
+          </div>
+          <div id="adminOrdersList" class="orders-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./admin.js" type="module"></script>
+  </body>
+</html>
