@@ -68,7 +68,7 @@ function renderReviews(reviews = []) {
       (review) => `
         <article class="testimonial-card">
           <p>${review.comment || 'Avis client sans commentaire detaille.'}</p>
-          <strong>${review.first_name || 'Client'} ${review.last_name || ''} • ${review.rating}/5</strong>
+          <strong>${review.first_name || 'Client'} ${review.last_name || ''} | ${review.rating}/5</strong>
         </article>
       `
     )
@@ -120,7 +120,7 @@ async function bootstrap() {
 
     elements.addToCartButton.addEventListener('click', async () => {
       if (!isAuthenticated()) {
-        showToast(elements.toast, 'Connectez-vous pour retrouver votre panier et finaliser votre commande');
+        showToast(elements.toast, 'Connectez-vous pour retrouver votre panier, sauvegarder vos choix et finaliser votre commande');
         window.setTimeout(() => {
           window.location.href = './auth.html';
         }, 700);
@@ -133,7 +133,7 @@ async function bootstrap() {
       showToast(elements.toast, `${product.name} a bien ete ajoute a votre panier`);
     });
   } catch (error) {
-    elements.productStatus.textContent = "Impossible d'afficher cette fiche produit pour le moment.";
+    elements.productStatus.textContent = "Impossible d'afficher cette fiche produit pour le moment. Veuillez reessayer dans quelques instants.";
   }
 }
 

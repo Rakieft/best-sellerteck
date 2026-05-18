@@ -98,7 +98,7 @@ function renderProducts() {
   elements.catalogCount.textContent = `${state.filteredProducts.length} produit(s)`;
 
   if (!pageItems.length) {
-    elements.statusMessage.textContent = 'Aucun produit ne correspond a vos filtres actuels.';
+    elements.statusMessage.textContent = 'Aucun produit ne correspond a vos filtres actuels. Essayez de modifier la categorie, la marque ou le budget.';
     elements.productGrid.innerHTML = '';
     return;
   }
@@ -115,7 +115,7 @@ function renderProducts() {
           </div>
           <div>
             <h3>${product.name}</h3>
-            <p>${product.short_description || 'Verifiez les points importants de ce produit avant de l ajouter au panier.'}</p>
+            <p>${product.short_description || 'Verifiez rapidement les points importants de ce produit avant de l ajouter au panier.'}</p>
           </div>
           <div class="product-meta">
             <strong class="product-price">${formatPrice(product.sale_price || product.price)}</strong>
@@ -126,7 +126,7 @@ function renderProducts() {
             <span>${product.review_count || 0} avis</span>
           </div>
           <div class="product-actions">
-            <a class="secondary-button" href="./product.html?id=${product.id}">Voir la fiche</a>
+            <a class="secondary-button" href="./product.html?id=${product.id}">Voir le detail</a>
             <button type="button" data-product-id="${product.id}">Ajouter au panier</button>
           </div>
         </article>
@@ -139,7 +139,7 @@ function renderProducts() {
       const product = state.products.find((item) => Number(item.id) === Number(button.dataset.productId));
       if (!product) return;
       if (!isAuthenticated()) {
-        showToast(elements.toast, 'Connectez-vous pour retrouver votre panier et poursuivre votre achat');
+        showToast(elements.toast, 'Connectez-vous pour retrouver votre panier, sauvegarder vos choix et poursuivre votre achat');
         window.setTimeout(() => {
           window.location.href = './auth.html';
         }, 700);
@@ -192,7 +192,7 @@ function bindFilterInteractions() {
 function renderFilters() {
   renderFilterGroup(
     elements.categoryFilters,
-    [{ slug: 'all', name: 'Toutes' }, ...state.categories.map((category) => ({ slug: category.slug, name: category.name }))],
+    [{ slug: 'all', name: 'Tous les rayons' }, ...state.categories.map((category) => ({ slug: category.slug, name: category.name }))],
     state.activeCategory,
     'category'
   );
@@ -203,7 +203,7 @@ function renderFilters() {
 
   renderFilterGroup(
     elements.brandFilters,
-    [{ slug: 'all', name: 'Toutes' }, ...brands],
+    [{ slug: 'all', name: 'Toutes les marques' }, ...brands],
     state.activeBrand,
     'brand'
   );
@@ -277,7 +277,7 @@ async function bootstrap() {
     renderFilters();
     applyFilters();
   } catch (error) {
-    elements.statusMessage.textContent = "Impossible d'afficher le catalogue pour le moment. Veuillez reessayer plus tard.";
+    elements.statusMessage.textContent = "Impossible d'afficher le catalogue pour le moment. Veuillez reessayer dans quelques instants.";
   }
 }
 
